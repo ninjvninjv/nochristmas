@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Day 4</title>
+		<style type="text/css">
+
+			body {
+				font-size: 30px;
+				line-height: 1.5;
+			  font-style: italic;
+			  font-weight: bold;
+			  font-family: 'CMU Concrete';
+
+				background-color: #fffefc;
+				width: 100vw;
+			  min-height: 100vh;
+			  overflow: hidden;
+
+				background-image: url('lottofee.jpg');
+			  background-size: 100vw auto;
+
+			  align-items:  center;
+			  display: flex;
+			  justify-content: center;
+				cursor: cell;
+			}
+
+			img {
+			}
+
+			.card {
+			  width:  500px;
+			  height: 350px;
+			  position:  relative;
+			  perspective:  1000px;
+			  z-index: 2;
+			  cursor: all-scroll;
+			}
+
+			.card img {
+			  width:  500px;
+			  height: 350px;
+			  z-index: 3;
+			  transform: rotateZ(10deg);
+			}
+
+			.card img, .card div {
+			  -webkit-backface-visibility:  hidden;
+			  transition:  transform 1s;
+			}
+
+			.card:hover img {
+			  transform: rotateX(160deg);
+			}
+
+			.card:hover div {
+			  transform: rotateX(360deg) rotateZ(10deg);
+			}
+
+			.card div {
+			  background-color: #ffe8a5;
+			  color: black;
+
+			  position:  absolute;
+			  top:  0;
+			  left:  0;
+			  width:  500px;
+			  height: 350px;
+			  z-index: 2;
+			  padding:  30px;
+			  font-size:  50px;
+			  transform: rotateZ(10deg) rotateX(180deg);
+			}
+
+			img.other {
+				position:  absolute;
+			  width: 15vw;
+			  height:  auto;
+			  top:  500px;
+			  left:  400px;
+			  animation: fadeIn 4.8s 0;
+			  z-index: 0;
+			}
+
+
+			#text {
+			  position: absolute;
+			  top:  0;
+			  left: 0;
+			  z-index:  -2;
+			  width: 100vw;
+			  height: 100vh;
+			  box-sizing:  border-box;
+			  padding:  2vw;
+			}
+	</style>
+	</head>
+	<body>
+		<script src='jquery-3.3.1.min.js'></script>
+		<script src='jquery-ui.min.js'></script>
+		<script type="text/javascript">
+
+		var images = [
+		  'one.png',
+		  'two.png',
+		  'three.png',
+		  'four.png',
+		  'five.png',
+		  'six.png',
+		  'seven.png',
+		  'eight.png',
+		  'nine.png',
+		  'ten.png',
+		  'eleven.png',
+		  'twelve.png',
+		  'thirteen.png',
+		  'fourteen.png',
+		  'fifteen.png',
+		  'sixteen.png',
+		  'seventeen.png',
+		  'eighteen.png',
+		  'nineteen.png',
+		  'twenty.png',
+		  'twentyone.png',
+		  'twentytwo.png',
+		  'twentythree.png',
+		  'twentyfour.png',
+		  'twentyfive.png',
+		  'twentysix.png',
+		  '1.png',
+		  '2.png',
+		  '3.png',
+		  '4.png',
+		  '5.png',
+		  '6.png',
+		  '7.png',
+		  '8.png',
+		  '9.png'
+		]
+
+
+		function placeImage(x, y) {
+		  var start = Math.floor(Math.random() * 16)
+		  let i = start
+		  const nextImage = images[i]
+		  const img = document.createElement('img')
+		  img.setAttribute('class', 'other')
+		  img.setAttribute('src', nextImage)
+		  img.style.left = x + 'px'
+		  img.style.top = y + 'px'
+		  img.style.transform =
+		    'translate(-50%, -50%) scale(0.5) rotate(' + (Math.random() * 20 - 10) + 'deg)'
+
+		  document.body.appendChild(img)
+		  i = i + 1
+
+		  if (i >= images.length) {
+		    i = 0
+		  }
+
+		}
+
+		document.addEventListener('click', function(event) {
+		  event.preventDefault()
+		  placeImage(event.pageX, event.pageY)
+		})
+
+		$('img').addEventListener('click', function(event) {
+		  event.preventDefault()
+		  $('img').draggable();
+		})
+
+
+		document.addEventListener('touchend', function(event) {
+		  event.preventDefault()
+		  placeImage(event.pageX, event.pageY)
+		})
+
+
+		</script>
+	</body>
+</html>
