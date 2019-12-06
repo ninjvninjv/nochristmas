@@ -1,0 +1,135 @@
+<html>
+<head>
+  <title>NoChristmas · Day 6</title>
+  <style rel='text/css'>
+      
+      @font-face {
+        font-family: 'RSEHandwritingPixel';
+        src: url('RSEHandwritingPixel.woff2') format('woff2'),
+            url('RSEHandwritingPixel.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+          margin: none;
+          width: 100vw;
+          height: 100vh;
+          background-image: url("day6-background.png");
+          background-size: 100vw 100vh;
+          background-attachment: fixed;
+          cursor: url("nikolaus.png"), auto;
+          z-index: 1;
+      }
+
+      img {
+          height: 500px;
+          width: 160px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      
+      p{
+          font-family:"RSEHandwritingPixel";
+          font-size: 1.5em;
+      }
+      
+      .column {
+          margin: 10px;
+          width: auto;
+          height:auto;
+          column-count: 3;
+          z-index: 100;
+          position: absolute;
+      }
+      
+      #nick {
+          height: 50vh;
+          width: auto;
+          margin: auto;
+          position: absolute;
+          z-index: 9;
+      }
+
+  </style>
+</head>
+
+<body style='margin: 0;'>
+    
+    <div class="column">
+        <p>Once upon a time there were three children, who were poor. Together with their parents they lived in a small house in a big city in Turkey. But then their mother died and their father felt terribly ill. He had to stay in bed and couldn't go to work. Hence he no longer earned any money and the children had nothing to eat and no clothes to go outside with. In the meantime it had become a frosty, bitter winter.
+        </p>
+        <p>"God in Heaven, please help us!" they prayed together with their father as they always did one evening when they went to bed feeling hungry.
+        In the middle of the night they became aware of a strange noise outside the door. And when they hurried out, in front of the door there was a huge sack, completely filled up to the top. Together they carried it into the house and opened it.
+        You can't imagine how happy they were, when they discovered it filled with bread and so much flour that they would be able to bake more bread in the days to come.
+        So they no longer had to starve. They ate till all of them were not hungry any more and managed to do for quite some time.
+        "We wonder who gave this to us?" the children asked one another and did not come to an answer. Hence they praised the Lord and went to sleep, well fed and happy.
+        </p>
+        <p>The following night, when the children had just fallen asleep, once again they woke up because of a noise in front of the door. And when they hurried outside, once again there was a huge sack, completely filled up to the top.
+        But when they opened the sack after having it carried into the house, this time the children found jackets and sweaters, caps and shirts.
+        They put on the clothes and each and every child found something that would fit just right. Even the father did. And none of them had to feel cold any longer.
+        "We wonder who gave this to us?" the children said.
+        "Maybe it was Bishop Nicholaus!" answered their father in a low voice. "He is said to be such a good person. He already helped a lot of poor people."
+        The children had already heard Bishop Nicholaus' name. Sometimes they had seen him walking through the town. But they never ever had thought that this richly and magnificently dressed person knew about their desperate situation and would be prepared to help them.
+        </p>
+        <p>The following evening the children were decided to stay awake, watch out and not fall asleep. Maybe Bishop Nicholaus would be coming to their house one more time.
+        In that case they had planned to run to him and give them their heartfelt thanks for all the presents they had received. Hence the children tried not to fall asleep; they waited and waited until in the end their eyes shut. Then only the father was still awake. But the later it got, the more he became tired. All at a sudden he heard a noise in front of the door. 
+        Immediately the father jumped out of bed and ran outside. When he reached the street, it was empty. But then the father heard somebody walk away in a hurry. He tried to catch up with the stranger and finally managed to do so. And indeed the person was no other than Bishop Nicholaus.
+        "Stop!" called the father. "Please stop, Bishop Nicholaus, and let me thank you!"
+        "You are welcome!" answered the Bishop friendly and gave the father the hand.
+        "Hurry back home. It is as cold as ice and you need to get well soon!" He nodded to the father and then quickly went away.
+        </p>
+        <p>But when the father got back home, his children had already discovered the third sack in front of the door and carried it in. And when they opened the lashes, they found shoes. Pairs and pairs of shoes, so that they no longer had to walk barefooted.
+        </p>
+        <p>But when they wanted to put on the shoes, they did not fit. And when the children looked inside, they found apples and toys. They could hardly believe, but there was no doubt, they had found toys. The children were extremely happy. Because of them being so poor, no one had ever given toys to them before. "These things are gifts from Nicholaus!" the father told them. "Bishop Nicholaus!"
+        </p>
+        <p>Later on the father got well again and was able to buy food and clothes for his children. But never they forgot, what had happened when they were poor. And when they grew older and got married, they told their children. And their children in their turn told other people, hence more and more people came to know the story.
+        </p>
+        <p>Bishop Nicholaus has been dead for a long time now. But the story of the sacks and the toys and the apples inside the shoes, this story has not been forgotten.
+        </p>
+        <p>This is the reason why still today Nicholaus comes and visits children with his sack. And inside the sack there are cookies, apples and nuts. Sometimes even toys.
+        And the fact of you placing your shoes outside the door the night before Nicholaus' Day, is also related to the shoes that those children found inside the sack. And maybe even tonight Nicholaus will put something inside for you.
+        </p>
+    </div>
+    <div id="nick">
+        <img src='nikolaus.png'/>
+    </div>
+
+</body>
+    
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    
+         var nick = document.getElementById("nick");
+		document.addEventListener("mousemove", getMouse);
+    
+        nick.style.position = "absolute";
+		var nickpos = {x:0, y:0};
+
+		setInterval(followMouse, 50);
+		
+		var mouse = {x:0, y:0}; //mouse.x, mouse.y
+		
+		function getMouse(e){
+			mouse.x = e.pageX;
+			mouse.y = e.pageY;
+        }
+
+		
+		function followMouse(){
+			//1. find distance X , distance Y
+			var distX = mouse.x - nickpos.x;
+			var distY = mouse.y - nickpos.y;
+			//Easing motion
+       //Progressive reduction of distance 
+			nickpos.x += distX;
+			nickpos.y += distY;
+			
+			nick.style.left = nickpos.x - 80 + "px";
+			nick.style.top = nickpos.y - 250 + "px";
+		}
+  
+</script>
+
+</html>
