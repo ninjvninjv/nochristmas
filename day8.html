@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>NoChristmas · Day 8</title>
+  <style rel='text/css'>
+
+    body {
+      margin: none;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("css/images/tischdecke.jpg")
+    }
+
+    * {
+      -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+      -moz-user-select: none; /* mozilla browsers */
+      -khtml-user-select: none; /* webkit (konqueror) browsers */
+      -ms-user-select: none; /* IE10+ */
+    }
+
+    img {
+      height: 80vh;
+      width: auto;
+      margin-top: 10vh;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 1;
+    }
+
+  </style>
+  <style type="text/css">
+body {cursor: url(http://www.rw-designer.com/cursor-extern.php?id=118845);}
+</style>
+</head>
+
+<body style='margin: 0;'>
+
+  <img id='thisimage' src='css/images/1.png' />
+
+</body>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+
+  var i = 1
+
+  $("body").click(function(){
+    if (i < 5) {
+      i = i + 1
+    }
+    else {
+      i = 1
+    }
+    $("img").attr("src", "css/images/" + i + ".png");
+  })
+
+</script>
+
+</html>
