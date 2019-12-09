@@ -9,6 +9,13 @@
       height: 100vh;
     }
 
+    * {
+      -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+      -moz-user-select: none; /* mozilla browsers */
+      -khtml-user-select: none; /* webkit (konqueror) browsers */
+      -ms-user-select: none; /* IE10+ */
+    }
+
     img {
       height: 80vh;
       width: auto;
@@ -16,6 +23,8 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+      opacity: 0.8;
+      mix-blend-mode: overlay ;
     }
 
   </style>
@@ -23,7 +32,7 @@
 
 <body style='margin: 0;'>
 
-  <img src='css/images/day3_larttypo.png' />
+  <img id='thisimage' src='css/images/day3_larttypo.png' />
 
 </body>
 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
