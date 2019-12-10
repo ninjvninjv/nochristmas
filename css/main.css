@@ -28,7 +28,7 @@ body {
 }
 
 .date {
-  width: calc(100vw/10);
+  width: calc(100vw/9);
   height: calc(100vh/6.5);
   display: inline-block;
   box-sizing: border-box;
