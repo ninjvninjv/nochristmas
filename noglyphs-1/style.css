@@ -1,0 +1,98 @@
+@font-face {
+    font-family: Friendship;
+    src: url(friendship-regular.otf);
+}
+
+@font-face {
+    font-family: Tigr;
+    src: url(tigr-regular.ttf);
+}
+
+@font-face {
+    font-family: Silvester;
+    src: url(silvester.otf);
+}
+
+@font-face {
+    font-family: GoodStretch;
+    src: url(goodstretch-regular-1-.otf);
+}
+
+@font-face {
+    font-family: Erika;
+    src: url(erikalatin1-regular.ttf);
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin:  0;
+  padding: 0;
+}
+
+* {
+  font-family: Erika;
+}
+
+body {
+	background-color: white;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 0 10px 0 0;
+}
+
+#download, #download button {
+  width: 40vw;
+  height: calc(100vh/3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin:  0;
+  padding: 0;
+  font-size: 13vh;
+  color: white;
+  background-color: red;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+#instructions {
+  width: 40vw;
+  height: calc(2*(100vh/3));
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin:  0;
+  padding: 10vh;
+  font-size: 13vh;
+  background-color: rgb(0,190,0);
+  text-align:  center;
+}
+
+#clear {
+  width: auto;
+  position: fixed;
+  bottom: 0;
+  right: 0vh;
+  margin:  0;
+  padding: 10vh;
+  font-size: 13vh;
+  background-color: transparent;
+  color:  red;
+  text-align:  center;
+  border: none;
+}
