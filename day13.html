@@ -1,0 +1,161 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>NoChristmas · Day 13</title>
+    <style rel='text/css'>
+      
+        @font-face {
+            font-family: 'Uschi-Regular';
+            src: url('Uschi-Regular.woff2') format('woff2'),
+                url('Uschi-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: none;
+            width: 100vw;
+            height: 100vh;
+            
+            font-family:"Helvetica";
+            font-size: 2.1vw;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.1vw;
+            font-weight: normal;
+            text-decoration: underline;
+            padding-left: 2.5vw;
+            margin: 10px;
+        }
+        
+        ul {
+            list-style: none;
+            font-family: "Helvetica";
+        }
+        
+        ol {
+            font-family: "Helvetica";
+        }
+        
+        .recipeTitle {
+            font-family:"Uschi-Regular";
+            font-size: 3.2vw;
+            padding: 10px 10px 20px 10px;
+            border: black 5px dotted;
+            margin: 5vh;
+        }
+        
+        .recipeColumn {
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+        }
+        
+        
+        #columnLeft {
+            width: 33%;
+            text-align: right;
+        }
+        
+        #columnRight {
+            width: 67%;
+            text-align: left;
+            padding: 0 50px;
+        }
+        
+        #titleRight {
+            padding-left: 100px;
+        }
+        
+        #probieren {
+            font-family:"Uschi-Regular";
+            font-size: 2.1vw;
+            padding: .3em;
+            border: black 5px dotted;
+            margin: 0 5vh;
+            float: left;
+            background-color: white;
+        }
+        
+        #probieren:hover {
+            color: red;
+            background-color: white;
+        }
+        
+        #getrunken {
+            width: 8em;
+            font-family:"Uschi-Regular";
+            font-size: 2.1vw;
+            padding: .3em;
+            border: black 5px dotted;
+            margin: 0 5vh;
+            float: right;
+        }
+
+    </style>
+</head>
+
+<body style='margin: 0;'>
+    <div class="recipeTitle">Leckerer Glühwein zum Selbermachen!</div>
+    <div class="recipeColumn" id="columnLeft">
+            <h2>
+                Zutaten
+            </h2>
+            <ul>
+                <li>8 Kardamomkapseln</li>
+                <li>10 Nelken</li>
+                <li>10 Pimentkörner</li>
+                <li>4 Kapseln Sternanis</li>
+                <li>1 Stange Zimt</li>
+                <li>1 Tl Koriandersaat</li>
+                <li>1 Tl Anissaat</li>
+                <li>1 l trockener Rotwein</li>
+                <li>1 unbehandelte Orange</li>
+                <li>Zucker</li>
+            </ul>
+    </div>
+    <div class="recipeColumn" id="columnRight">
+            <h2 id="titleRight">
+                Zubereitung
+            </h2>
+            <ol>
+                <li>
+                    Kardmomkapseln mit der breiten Seite eines großen Messers aufdrücken. Kardamom, Nelken, Piment, Sternanis, Zimtstange, Koriander und Anissaat in einen Teebeutel geben und zubinden.
+                </li>
+                <li>
+                    Rotwein und 500 ml Wasser mit dem Teebeutel zugedeckt aufkochen. Inzwischen die Orange heiß waschen, trocknen und in 1/2 – 1 cm dicke Scheiben schneiden. Zum Wein geben und zugedeckt bei milder Hitze 15 Min. ziehen lassen.
+                </li>
+                <li>
+                    Teebeutel über dem Wein ausdrücken und entfernen. Den Glühwein mit Zucker abschmecken.
+                </li>
+            </ol>
+    </div>
+    <div class='gluehwein'>
+        <button type='button' id='probieren'>Probieren</button>
+        <div id='getrunken'> Getrunken: 0 </div>
+    </div>
+
+</body>
+    
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    
+   var i = 0
+   
+  $("#probieren").click(function(){
+      
+    i = i + 1
+    
+    $("#getrunken").text( "Getrunken: " + i );
+    $("body").css("text-shadow", i*2+"px "+i*2+"px "+i*2+"px #000");
+    $("body").css("color", "transparent");
+    $("#getrunken").css("text-shadow", "none");
+    $("#getrunken").css("color", "black");
+  })
+
+</script>
+
+</html>
