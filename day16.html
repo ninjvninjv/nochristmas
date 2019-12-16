@@ -6,13 +6,13 @@
             
             @font-face {
                 font-family: 'TIGR-Regular';
-                src: url('TIGR-Regular.woff2') format('woff2'),
-                    url('TIGR-Regular.woff') format('woff');
+                src: url('css/TIGR-Regular.woff2') format('woff2'),
+                    url('css/TIGR-Regular.woff') format('woff');
                 font-weight: normal;
                 font-style: normal;
             }
 			body {
-                background-image: url('day16-plant-2.jpg');
+                background-image: url('css/images/day16-plant-2.jpg');
                 background-size: 100vw 100vh;
             }
             
@@ -35,14 +35,14 @@
             Decorate our tree!
         </div>
         
-		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
             
         function placeImage(x, y) {
             
             const img = document.createElement('img')
             img.setAttribute('class', 'other')
-            img.setAttribute('src', 'day16-dot.png')
+            img.setAttribute('src', 'css/images/day16-dot.png')
             img.style.left = x + 'px'
             img.style.top = y + 'px'
             img.style.transform = 'translate(-50%, -50%)'
