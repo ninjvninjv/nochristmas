@@ -1,0 +1,124 @@
+<html>
+<head>
+  <title>NoChristmas · Day 17</title>
+  <style rel='text/css'>
+      
+      @font-face {
+        font-family: 'NewRage-Regular';
+        src: url('NewRage-Regular.woff') format('woff'),
+            url('NewRage-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+          margin: none;
+          width: 100vw;
+          height: 100vh;
+          background-image: url("day17-foil.jpg");
+          background-size: 100vw 100vh;
+          background-attachment: fixed;
+          cursor: none;
+          z-index: 1;
+      }
+
+      img {
+          height: 600px;
+          width: auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      
+      a {
+          top: 35%;
+          height: 50%;
+          cursor: none;
+          margin: auto;
+      }
+      
+      .column {
+          width: 100vw;
+          font-family:"NewRage-Regular";
+          font-size: 100px;
+          line-height: 100px;
+          text-decoration:none;
+          text-align: center;
+          text-shadow: 5px  5px 5px white,
+                  5px -5px 5px white,
+                 -5px  5px 5px white,
+                 -5px -5px 5px white;
+          color:red;
+          margin: none;
+          z-index:50;
+          position: absolute;
+          word-break: break-all;
+      }
+      
+      .column:hover {
+          color: white;
+          cursor: none;
+          text-shadow: 5px  5px 5px red,
+                  5px -5px 5px red,
+                 -5px  5px 5px red,
+                 -5px -5px 5px red;
+      }
+      
+      #poster {
+          height: auto;
+          width: auto;
+          margin: auto;
+          position: absolute;
+          z-index: 100;
+          pointer-events: none;
+      }
+
+  </style>
+</head>
+
+<body style='margin: 0;'>
+    
+    <a class="column" href="https://open.spotify.com/playlist/05t0fxHBHp11nClh0QoNoV?si=bXTR4ehvRDW_hNp0pLP-dQ">
+        SANTA BABY
+    </a>
+    <div id="poster">
+        <img src='oh_palme.jpg'/>
+    </div>
+
+</body>
+    
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    
+         var poster = document.getElementById("poster");
+		document.addEventListener("mousemove", getMouse);
+    
+        poster.style.position = "absolute";
+		var posterpos = {x:0, y:0};
+
+		setInterval(followMouse, 50);
+		
+		var mouse = {x:0, y:0}; //mouse.x, mouse.y
+		
+		function getMouse(e){
+			mouse.x = e.pageX;
+			mouse.y = e.pageY;
+        }
+
+		
+		function followMouse(){
+			//1. find distance X , distance Y
+			var distX = mouse.x - posterpos.x;
+			var distY = mouse.y - posterpos.y;
+			//Easing motion
+       //Progressive reduction of distance 
+			posterpos.x += distX;
+			posterpos.y += distY;
+			
+			poster.style.left = posterpos.x - 80 + "px";
+			poster.style.top = posterpos.y - 250 + "px";
+		}
+  
+</script>
+
+</html>
