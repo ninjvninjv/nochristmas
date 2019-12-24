@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>NoChristmas · Day 24</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <style rel='text/css'>
+      
+      @font-face {
+        font-family: 'Felino-Regular';
+        src: url('Felino-Regular.woff') format('woff'),
+            url('Felino-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Felino-Albino';
+        src: url('Felino-Albino.woff') format('woff'),
+            url('Felino-Albino.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+          margin: none;
+          width: 100vw;
+          height: 100vh;
+          background-image: url("day24.jpg");
+          background-size: 100vw 100vh;
+          background-attachment: fixed;
+          z-index: 1;
+      }
+      
+      a {
+      }
+      
+      div {
+      } 
+      
+      .column {
+          width: 100vw;
+          font-size: 100px;
+          line-height: 100px;
+          text-decoration:none;
+          text-align: center;
+          color: white;
+          text-shadow: 5px  5px 5px #00be00,
+                  5px -5px 5px #00be00,
+                 -5px  5px 5px #00be00,
+                 -5px -5px 5px #00be00;
+          margin: none;
+          z-index:50;
+          position: absolute;
+          word-break: break-all;
+          display: inline-block;
+      }
+      
+      #col-1 {
+          font-family:"Felino-Regular";
+          margin-top: 80vh;
+      }
+      #col-2 {
+          font-family:"Felino-Albino";
+          margin-top: 15vh;
+      }
+      
+      .column:hover {
+          color: #00be00;
+          text-shadow: 5px  5px 5px white,
+                  5px -5px 5px white,
+                 -5px  5px 5px white,
+                 -5px -5px 5px white;
+      }
+      
+    </style>
+    
+</head>
+
+<body style='margin: 0;'>
+    <div class="linkbox">
+        <a class="column" id="col-1" href="Felino-Regular.otf" download>
+            MERRY CHRISMAS!
+        </a>
+        <a class="column" id="col-2" href="Felino-Albino.otf" download>
+            MERRY CHRISMAS!
+        </a>
+    </div>
+</body>
+    
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script src="js/Customizable-Snow-Falling-Effect-With-jQuery-CSS3-Flurry/jquery.flurry.js"></script>
+<script type="text/javascript"></script>
+
+</html>
